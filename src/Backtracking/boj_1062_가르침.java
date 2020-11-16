@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class boj_1062_가르침 {
     static int N, K, ans;
     static boolean[][] word;
-    static boolean[] visit;
+    static boolean[] visit; 
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
