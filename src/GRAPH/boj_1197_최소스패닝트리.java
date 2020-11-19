@@ -81,6 +81,7 @@ public class boj_1197_최소스패닝트리 {
 	
 		return parent[u] = find(parent[u]); // 압축
 
+		
 		// return find(parent[u]) // 압축x
 	}
 
