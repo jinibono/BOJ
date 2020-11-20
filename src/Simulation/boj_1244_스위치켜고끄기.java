@@ -3,7 +3,7 @@ package Simulation;
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class boj_1244_스위치켜고끄기 {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
