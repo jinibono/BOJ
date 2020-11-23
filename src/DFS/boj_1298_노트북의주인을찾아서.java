@@ -4,16 +4,21 @@ import java.util.*;
 import java.io.*;
 
 public class boj_1298_노트북의주인을찾아서 {
+	static int result = 0;
+	static boolean[] visited;
+	static int[] parent; // 노트북이 선택된 사용자의 번호
 
-	static boolean[][] visited;
+	static ArrayList list[];
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		int N = Integer.parseInt(st.nextToken());
 		int M = Integer.parseInt(st.nextToken());
-		ArrayList list[] = new ArrayList[N + 1];
-		visited = new boolean[N + 1][N + 1]; // 어떤 점에서 다른 점을 방문한 적이 있는가?
+		list = new ArrayList[N + 1];
+
+		parent = new int[N + 1];
+		visited = new boolean[N + 1]; // 어떤 점에서 다른 점을 방문한 적이 있는가?
 		for (int i = 1; i <= N; i++)
 			list[i] = new ArrayList<Integer>();
 
@@ -23,8 +28,32 @@ public class boj_1298_노트북의주인을찾아서 {
 			int b = Integer.parseInt(st.nextToken());
 			list[a].add(b);
 		}
-		
+		for (int i = 1; i <= N; i++) {
+			visited = new boolean[N + 1]; // 어떤 점에서 다른 점을 방문한 적이 있는가?
+			if (dfs(i))
+				result++;
+		}
 
+		System.out.println(result);
+//		System.out.println(Arrays.toString(parent));
+	}
+
+	static boolean dfs(int num) {
+
+		for (int i = 0; i < list[num].size(); i++) {
+			int next = (int) list[num].get(i);
+			if (visited[next])
+				continue; // num에서 next로 가는 경우의 수를 이미 고려했다면 고려하지 않스빈다.
+			visited[next] = true;
+			if (parent[next] == 0 || dfs(parent[next])) // 아직 부모가 없으면
+			{
+
+				parent[next] = num;
+				return true;
+			}
+
+		}
+		return false;
 	}
 
 }
