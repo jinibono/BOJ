@@ -21,9 +21,12 @@ public class boj_1315_RPG {
 		}
 
 	}
+
 	// 하나는 힘(STR)이고, 다른 하나는 지력(INT)이다. 캐릭터를 생성했을 때, 두 스탯은 모두 1이다.
-	static void process()
-	{
-		
+	static void process(int idx) {
+		// 힘과 지력은 모두 1에서 출발하고
+		// 힘이 지력보다 클때만 동작한다
+		if (STR[idx] > INT[idx])
+			;
 	}
 }
