@@ -9,5 +9,5 @@ public class boj_20304_비밀번호제작 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 	}
-	//commiter change
+	//commiter change2
 }
