@@ -11,6 +11,7 @@ public class boj_1315_RPG {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
 		N = Integer.parseInt(br.readLine());
 		StringTokenizer st;
 		for (int i = 0; i < N; i++) {
