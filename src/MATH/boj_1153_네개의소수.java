@@ -2,7 +2,7 @@ package MATH;
 import java.util.*;
 import java.io.*;
 
-public class boj__1153_네개의소수 {
+public class boj_1153_네개의소수 {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -54,9 +54,10 @@ public class boj__1153_네개의소수 {
 		}
 		left = N / 2;
 		right = N - left;
-		while (left > 2 && right < N && !pos) {
+//		System.out.println(left+" "+right);
+		while (left >= 2 && right <= N) {
 
-			if (flag[left] == false && flag[right] == false) {
+			if (!flag[left] && !flag[right] ) {
 				result[2] = left;
 				result[3] = right;
 				break;
@@ -68,7 +69,8 @@ public class boj__1153_네개의소수 {
 		}
 		for(int i=0;i<4;i++)
 			System.out.print(result[i]+" ");
-
+		//문제 풀이에 오류가 있어 수정 
+		//while문의 부등호 수정
 	}
 
 }
