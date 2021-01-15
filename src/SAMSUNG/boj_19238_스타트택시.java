@@ -3,7 +3,7 @@ package SAMSUNG;
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class boj_19238_스타트택시 {
 	static int[][] arr;
 	static boolean[][] visited;
 	static ArrayList<person> list;
