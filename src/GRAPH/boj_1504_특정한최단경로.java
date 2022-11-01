@@ -60,10 +60,18 @@ public class boj_1504_특정한최단경로 {
 		}
 
 		djik(b);
+		if (dist[N] >= (int) 1e9) {
+			System.out.println(-1);
+			return;
+		}
 
 		int b_to_c = dist[c];
 		int b_to_end = dist[N];
 		djik(c);
+		if (dist[N] >= (int) 1e9) {
+			System.out.println(-1);
+			return;
+		}
 
 		int c_to_b = dist[b];
 		int c_to_end = dist[N];
